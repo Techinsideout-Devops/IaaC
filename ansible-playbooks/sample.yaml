@@ -1,0 +1,26 @@
+# '---' specifies the beginning of a YAML file
+---
+# this is a name of our play
+- name: Update packages and install Git and Nginx 
+  hosts: all
+  become: true
+
+  tasks:
+  # This task runs a given shell command on your manged hosts
+  - name: Update package lists in the server
+    command: apt update
+
+  # Create a user
+  - name: Add the user
+    ansible.builtin.user:
+      name: testuser
+        
+  - name: Install Git
+    apt:
+      name: git
+      state: "latest"
+
+  - name: Install the latest of package "nginx"
+    apt:
+      name: "nginx"
+      state: "latest"

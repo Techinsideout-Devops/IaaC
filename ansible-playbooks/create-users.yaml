@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+    - name: Create a new user called sruthi
+      user:
+        name: sruthi
+        state: present
+
+    - name: Create a new user called bhargav
+      user:
+        name: bhargav
+        state: present

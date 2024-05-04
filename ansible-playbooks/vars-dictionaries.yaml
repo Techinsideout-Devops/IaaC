@@ -1,0 +1,23 @@
+---
+- hosts: all
+  vars:
+    students:
+        Avinash:
+          gender: Male
+          age: 37
+          city: Toronto
+
+        Bhargav:
+          gender: male
+          age: 23
+          city: Bangalore
+
+        Sunny:
+          gender: male
+          age: 22
+          city: Bangalore
+
+  tasks:
+  - name: Ansible Dictionaries Usage Example
+    debug:
+      msg: " A list of student details: {{ students.Sunny }}"

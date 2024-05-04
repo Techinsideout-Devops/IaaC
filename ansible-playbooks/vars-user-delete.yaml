@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Create new users
+      user:
+        name: '{{ item }}'
+        state: absent
+        remove: true
+
+      loop:
+        - avinash
+        - ashok
+        - bhargav

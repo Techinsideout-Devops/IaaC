@@ -1,0 +1,10 @@
+---
+# tasks file for techinsideout
+- name: Install nginx
+  apt:
+    name: nginx
+    state: latest
+- name: Restart nginx service
+      service:
+      	name: nginx
+        state: restarted
